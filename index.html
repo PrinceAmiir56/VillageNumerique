@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Village Numérique Résistant – Carte NIRD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="logo-zone">
+        <div class="logo-moon"></div>
+        <div class="logo-text">
+          <h1>Le Village Numérique Résistant</h1>
+          <p>Incarne un établissement et fais des choix NIRD dans la carte du village.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <aside class="panel panel-left">
+        <h2>Ton établissement</h2>
+        <div class="avatar">
+          <div class="avatar-circle">
+            <span>🏫</span>
+          </div>
+          <p class="avatar-name">Collège d’Astérix-les-Bits</p>
+          <p class="avatar-role">Responsable numérique</p>
+        </div>
+
+        <h3>Indicateurs NIRD</h3>
+
+        <div class="stat">
+          <div class="stat-label">
+            <span>Inclusion</span>
+            <span id="stat-inclusion-value">50</span>
+          </div>
+          <div class="stat-bar">
+            <div id="stat-inclusion-bar" class="stat-fill"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-label">
+            <span>Responsabilité</span>
+            <span id="stat-responsibility-value">50</span>
+          </div>
+          <div class="stat-bar">
+            <div id="stat-responsibility-bar" class="stat-fill"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-label">
+            <span>Durabilité</span>
+            <span id="stat-durability-value">50</span>
+          </div>
+          <div class="stat-bar">
+            <div id="stat-durability-bar" class="stat-fill"></div>
+          </div>
+        </div>
+
+        <div class="stat stat-danger">
+          <div class="stat-label">
+            <span>Dépendance aux Big Tech</span>
+            <span id="stat-dependence-value">50</span>
+          </div>
+          <div class="stat-bar">
+            <div id="stat-dependence-bar" class="stat-fill"></div>
+          </div>
+        </div>
+
+        <button id="restartBtn" class="btn btn-secondary hidden">
+          Rejouer la partie
+        </button>
+      </aside>
+
+      <section class="panel panel-center">
+        <div class="map-header">
+          <h2>Carte du village NIRD</h2>
+          <p>Sélectionne un lieu pour prendre une décision en tant qu’établissement.</p>
+        </div>
+
+        <div class="village-map" id="villageMap">
+          <button class="map-tile" data-location-id="salleInfo">
+            <div class="map-icon">💻</div>
+            <div class="map-label">
+              <span>Salle info</span>
+              <small>Matériel & systèmes</small>
+            </div>
+            <div class="map-status" id="status-salleInfo">⚪</div>
+          </button>
+
+          <button class="map-tile" data-location-id="nuage">
+            <div class="map-icon">☁️</div>
+            <div class="map-label">
+              <span>Nuage du village</span>
+              <small>Stockage & données</small>
+            </div>
+            <div class="map-status" id="status-nuage">⚪</div>
+          </button>
+
+          <button class="map-tile" data-location-id="fablab">
+            <div class="map-icon">🛠️</div>
+            <div class="map-label">
+              <span>Fablab / Réemploi</span>
+              <small>Réparation & réutilisation</small>
+            </div>
+            <div class="map-status" id="status-fablab">⚪</div>
+          </button>
+
+          <button class="map-tile" data-location-id="maisonCommune">
+            <div class="map-icon">🏡</div>
+            <div class="map-label">
+              <span>Maison commune</span>
+              <small>Communauté NIRD</small>
+            </div>
+            <div class="map-status" id="status-maisonCommune">⚪</div>
+          </button>
+        </div>
+
+        <div class="scene-area">
+          <div class="scene-header">
+            <h3 id="sceneTitle">Bienvenue à Astérix-les-Bits</h3>
+            <p id="sceneSubtitle">Petit village éducatif face à l’empire des Big Tech.</p>
+          </div>
+
+          <div class="scene-text" id="sceneText">
+            Tu viens d’être nommé·e responsable numérique du collège d’Astérix-les-Bits.
+            Clique sur un lieu de la carte pour prendre tes premières décisions NIRD.
+          </div>
+
+          <div class="choices" id="choices">
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel panel-right">
+        <h2>Journal du village</h2>
+        <div id="log" class="log">
+        </div>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        NIRD – Numérique Inclusif, Responsable et Durable •
+        <span class="tag">Jeu de rôle sur carte</span>
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
