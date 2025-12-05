@@ -60,5 +60,5 @@ Aucune dépendance externe : le jeu fonctionne avec un simple navigateur Web.
 1. Cloner le dépôt :
 
    ```bash
-   git clone https://github.com/<TON_USERNAME>/VillageNumerique.git
+   git clone https://github.com/PrinceAmiir56/VillageNumerique.git
    cd VillageNumerique
